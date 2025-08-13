@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const { Server } = require('socket.io');
 const Chat = require('./models/chat');
 const chatRoutes = require('./routes/chatroute');
+const authenticate = require('./routes/Auth');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -89,7 +90,7 @@ connectTomongo().then(() => {
 });
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
+app.use('/api/auth', authenticate);
 app.use('/api/chats', chatRoutes);
 
 // Start server
