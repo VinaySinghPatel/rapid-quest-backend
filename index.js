@@ -14,6 +14,8 @@ const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
   'http://localhost:3000',
+  'https://scintillating-empanada-cc6cfa.netlify.app/',
+  'https://scintillating-empanada-cc6cfa.netlify.app',
 ];
 
 app.use(cors({
